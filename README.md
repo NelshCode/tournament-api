@@ -48,3 +48,30 @@ Pour lancer le serveur en mode développement, qui utilise `ts-node` (sans avoir
 
 ```bash
 npm run dev
+```
+
+Le serveur sera disponible à l'adresse http://localhost:3000.
+
+### Mode production
+
+1. Compile le projet TypeScript en JavaScript : :
+    ```bash
+    npm run build
+    ```
+
+2. Lance le projet compilé :
+    ```bash
+    npm run start
+    ```
+Le serveur sera disponible à l'adresse http://localhost:3000.
+
+## Routes API
+### 1. Ajouter un joueur
+####  Méthode: POST /api/players
+#### Corps de la requête :
+    ```bash
+    {
+  "pseudo": "NomDuJoueur"
+}
+
+    ```
