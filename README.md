@@ -69,9 +69,8 @@ Le serveur sera disponible à l'adresse http://localhost:3000.
 ### 1. Ajouter un joueur
 ####  Méthode: POST /api/players
 #### Corps de la requête :
-    ```bash
+    ```json
     {
-  "pseudo": "NomDuJoueur"
+  "pseudo": "NomDuJoueur" 
 }
-
     ```
