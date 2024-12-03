@@ -6,6 +6,9 @@ const config: Config = {
   verbose: true,           // Affiche plus de détails sur les tests
   moduleFileExtensions: ['ts', 'js'],
   testMatch: ['**/tests/**/*.test.ts'], // Localisation des fichiers de test
+    transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
   collectCoverage: true,   // Génère un rapport de couverture de code
   coverageDirectory: 'coverage',
 };
