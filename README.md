@@ -185,4 +185,3 @@ Cela exécutera tous les tests définis dans le répertoire tests/.
 - Vérifier le classement d'un joueur
 - Supprimer tous les joueurs
 - Vérification des routes de l'API
-
