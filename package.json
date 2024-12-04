@@ -4,9 +4,7 @@
     "lint:fix": "eslint './src/**/*.{js,ts}' --fix",
     "start": "node dist/index.js",
     "dev": "ts-node-dev src/index.ts",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "jest --detectOpenHandles --coverage --watchAll=false --forceExit ./tests"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.12",
