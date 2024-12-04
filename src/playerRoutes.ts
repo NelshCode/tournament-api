@@ -7,7 +7,7 @@ router.post('/players', (req, res) => {
   const { pseudo } = req.body;
   try {
     PlayerService.addPlayer(pseudo);
-    res.status(201).json({ message: `Joueur ajouté : ${pseudo}` });
+    res.status(201).json({ message: `Added player : ${pseudo}` });
   } catch (err: any) {
     res.status(400).json({ error: err.message });
   }
@@ -18,7 +18,7 @@ router.put('/players/:pseudo/points', (req, res) => {
   const { points } = req.body;
   try {
     PlayerService.updatePoints(pseudo, points);
-    res.status(200).json({ message: `Points mis à jour pour : ${pseudo}` });
+    res.status(200).json({ message: `Points updated for : ${pseudo}` });
   } catch (err: any) {
     res.status(404).json({ error: err.message });
   }
@@ -28,7 +28,7 @@ router.get('/players/:pseudo', (req, res) => {
   const { pseudo } = req.params;
   const player = PlayerService.getPlayer(pseudo);
   if (!player) {
-    res.status(404).json({ error: `Le joueur "${pseudo}" n'existe pas.` });
+    res.status(404).json({ error: `Player "${pseudo}" does not exists` });
   } else {
     res.status(200).json(player); // Inclut maintenant le classement
   }
@@ -41,7 +41,7 @@ router.get('/players', (req, res) => {
 
 router.delete('/players', (req, res) => {
   PlayerService.deleteAllPlayers();
-  res.status(200).json({ message: 'Tous les joueurs ont été supprimés.' });
+  res.status(200).json({ message: 'All players were deleted.' });
 });
 
 export default router;

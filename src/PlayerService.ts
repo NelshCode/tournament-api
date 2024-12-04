@@ -6,7 +6,7 @@ class PlayerService {
     try {
       stmt.run(pseudo, 0);
     } catch (err) {
-      throw new Error(`Le pseudo "${pseudo}" existe déjà.`);
+      throw new Error(`Pseudo "${pseudo}" already exists.`);
     }
   }
 
@@ -14,7 +14,7 @@ class PlayerService {
     const stmt = db.prepare('UPDATE players SET points = ? WHERE pseudo = ?');
     const result = stmt.run(points, pseudo);
     if (result.changes === 0) {
-      throw new Error(`Le joueur "${pseudo}" n'existe pas.`);
+      throw new Error(`Pseudo "${pseudo}" does not exists.`);
     }
   }
 
