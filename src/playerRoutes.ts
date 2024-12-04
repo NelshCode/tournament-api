@@ -30,7 +30,7 @@ router.get('/players/:pseudo', (req, res) => {
   if (!player) {
     res.status(404).json({ error: `Player "${pseudo}" does not exists` });
   } else {
-    res.status(200).json(player); // Inclut maintenant le classement
+    res.status(200).json(player); 
   }
 });
 
