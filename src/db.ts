@@ -1,9 +1,9 @@
 import Database from 'better-sqlite3';
 
-// Connexion à la base SQLite (le fichier `players.db` sera créé s'il n'existe pas)
+// connect to db (create file players.db if it does not exists)
 const db = new Database('players.db', { verbose: console.log });
 
-// Création de la table des joueurs
+// create player table
 db.exec(`
   CREATE TABLE IF NOT EXISTS players (
     pseudo TEXT PRIMARY KEY,
@@ -11,5 +11,6 @@ db.exec(`
   );
 `);
 
-// Export de la connexion pour l'utiliser dans d'autres fichiers
+// export connexion to be used
+// in a production envirronement db should run on another service and we should connect to it 
 export default db;
