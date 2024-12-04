@@ -16,10 +16,10 @@
       "plugin:prettier/recommended"
     ],
     "rules": {
-      "no-console": "warn",  // Avertit sur les console.log
-      "@typescript-eslint/no-unused-vars": "warn", // Avertit sur les variables inutilisées
-      "@typescript-eslint/explicit-function-return-type": "off", // Autorise l'absence de types explicites sur les fonctions
-      "prettier/prettier": ["error", { "endOfLine": "auto" }] // Compatible avec Prettier
+      "no-console": "warn", 
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "prettier/prettier": ["error", { "endOfLine": "auto" }]
     }
   }
   
