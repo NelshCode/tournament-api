@@ -1,18 +1,10 @@
 import request from 'supertest';
 
 
-const BASE_URL = 'http://localhost:3000'; // URL cible de l'application
+const BASE_URL = 'http://localhost:3000'; // target URL
 describe('API Endpoints', () => {
   let FirstPlayer: string = 'FirstPlayer';
   let SecondPlayer: string = 'SecondPlayer';
-
-  beforeAll(async () => {
-    const response = await request(BASE_URL).delete('/api/players').set('Accept', 'application/json');
-  });
-
-  afterAll(async () => {
-    // Nettoie ou ferme les connexions après tous les tests.
-  });
 
   it('should add a new player', async () => {
     const response = await request(BASE_URL)
