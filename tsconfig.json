@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",                     // Cible ES2021 pour un JS moderne
+    "module": "CommonJS",                  // Utilisé par Node.js
+    "outDir": "./dist",                    // Où placer les fichiers compilés
+    "rootDir": "./src",                    // Répertoire source des fichiers TS
+    "strict": true,                        // Active toutes les vérifications strictes
+    "moduleResolution": "node",           // Résolution des modules compatible Node.js
+    "esModuleInterop": true,              // Facilite l'importation des modules CommonJS
+    "skipLibCheck": true,                 // Ignore la vérification des types des bibliothèques
+    "forceConsistentCasingInFileNames": true // Vérifie la cohérence des noms de fichiers
+  },
+  "include": ["src"],                      // Inclut tous les fichiers dans le répertoire `src`
+  "exclude": ["node_modules", "dist"]     // Exclut les dossiers inutiles
+}
