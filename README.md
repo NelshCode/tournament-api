@@ -1,39 +1,28 @@
 # Tournament Player Ranking API
 
-Cette API permet de gérer un tournoi en suivant le classement des joueurs. Elle permet d'ajouter des joueurs, de mettre à jour leurs points, de récupérer leurs informations (avec classement), de retourner la liste des joueurs triés et de supprimer tous les joueurs à la fin du tournoi.
-
 ## Table des matières
 
-- [Technologies](#technologies)
 - [Installation](#installation)
 - [Lancer le projet](#lancer-le-projet)
 - [Routes API](#routes-api)
 - [Tests](#tests)
-
-## Technologies
-
-- **Node.js** : Serveur web
-- **TypeScript** : Langage de programmation
-- **Express** : Framework web pour construire l'API
-- **SQLite** : Base de données légère pour stocker les joueurs et leurs points
-- **Jest** : Framework de tests unitaires
-- **Supertest** : Outil pour tester les routes de l'API
+- [TODO](#todo)
 
 ## Installation
 
 ### Prérequis
 
-Avant d'installer le projet, assure-toi d'avoir installé [Node.js](https://nodejs.org/) et [npm](https://www.npmjs.com/).
+[Node.js](https://nodejs.org/) et [npm](https://www.npmjs.com/).
 
 ### Étapes d'installation
 
-1. Clone ce repository :
+1. Clone:
 
     ```bash
     git clone https://github.com/ton-compte/tournament-api.git
     ```
 
-2. Installe les dépendances :
+2. Install:
 
     ```bash
     cd tournament-api
@@ -44,7 +33,7 @@ Avant d'installer le projet, assure-toi d'avoir installé [Node.js](https://node
 
 ### Mode développement
 
-Pour lancer le serveur en mode développement, qui utilise `ts-node` (sans avoir à compiler manuellement le code TypeScript) :
+Pour lancer le serveur en mode développement :
 
 ```bash
 npm run dev
@@ -54,19 +43,15 @@ Le serveur sera disponible à l'adresse <http://localhost:3000>.
 
 ### Mode production
 
-1. Compile le projet TypeScript en JavaScript : :
+Pour lancer le services, deux options :
 
-    ```bash
-    npm run build
-    ```
-
-2. Lance le projet compilé :
-
-    ```bash
-    npm run start
-    ```
-
-Le serveur sera disponible à l'adresse <http://localhost:3000>.
+ ```bash
+npm i & npm start:full
+```
+OU
+```bash
+./start-service.sh
+```
 
 ## Routes API
 
@@ -169,19 +154,30 @@ Corps de la requête :
 
 Les tests sont réalisés avec Jest et Supertest. Pour les exécuter :
 
-1. Lance les tests :
+1. Lance les tests unitaires :
 
 ```bash
 npm run test
 
 ```
 
-Cela exécutera tous les tests définis dans le répertoire tests/.
+2. Lancer les tests d'intégration
 
-### Tests inclus
+```bash
+npm run integration
 
-- Ajouter un joueur
-- Mettre à jour les points d'un joueur
-- Vérifier le classement d'un joueur
-- Supprimer tous les joueurs
-- Vérification des routes de l'API
+```
+
+Cela exécutera tous les tests définis dans le répertoire tests/unit ou tests/integration.
+
+## TODO : Liste des tâches à accomplir
+
+- Sécuriser les routes (type d'entré)
+- Mise en place d'un middleware pour les erreurs
+- Mise en place de log (Datadog ?)
+- Mise en place d'une sécurité type authent JWT
+- Déployer une base de données indépendantes (Mongo ?)
+- Tester la gestion des erreurs
+- Tester l'environnement avec un gros tournoi et de nombreux appels
+- Configurer un environnement de production sur AWS.
+- Mettre en place un pipeline de déploiement (Jenkins/github action).
